@@ -1,4 +1,4 @@
-package generate
+package pdigenerator
 
 import (
 	"bytes"
@@ -23,7 +23,8 @@ func GenerateQR(uuid string) ([]byte, error) {
 		wr,
 		standard.WithQRWidth(5),
 		standard.WithBorderWidth(1),
-		standard.WithLogoImageFilePNG("./logo/logo_25.png"),
+		standard.WithLogoImageFilePNG("./logo/logo_25_pdi.png"),
+		standard.WithCircleShape(),
 	)
 	if err = qrc.Save(w2); err != nil {
 		return nil, err
